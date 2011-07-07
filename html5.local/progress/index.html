@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 progress tag</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<ul class="compact">
+	  <li>
+	    <label>progress: empty</label>
+	    <progress value="0">
+	  </li>
+	  <li>
+	    <label>progress: full</label>
+	    <progress id="progress" value="12" max="20"></progress>
+	  </li>
+	  <li>
+	    <label>progress: "a bit"</label>
+	    <progress min=".34" max=".41" value=".36"></progress>
+	  </li>
+	  <li>
+	    <label>Preferred usage</label>
+	    <progress min="50" max="250" low="100" high="200" value="120"></progress>
+	  </li>
+	  <li>
+	    <label>Too much traffic</label>
+	    <progress min="1024" max="10240" low="2048" high="8192" value="9216">
+	  </li>
+	  <li>
+	    <label>Optimum value</label>
+	    <progress value=".5" optimum=".8"></progress>
+	  </li>
+	</ul><form><p>
+	 <progress value="3"></p></form>
+		<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script-->
+		<script src="../static/js/libs/jquery.min.js"></script>
+	
+	<script>
+		var attr = $('#progress').attr('value'),
+			prop = $('#progress').prop('value');
+		console.log('attr[value] = '+attr);
+		console.log('prop() '+prop);
+	</script>
+</body>
+</html>

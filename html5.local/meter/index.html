@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 meter tag</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<ul class="compact">
+	  <li>
+	    <label>Meter: empty</label>
+	    <meter value="0"></meter>
+	  </li>
+	  <li>
+	    <label>Meter: full</label>
+	    <meter id="meter" value="12" max="20"></meter>
+	  </li>
+	  <li>
+	    <label>Meter: "a bit"</label>
+	    <meter min=".34" max=".41" value=".36"></meter>
+	  </li>
+	  <li>
+	    <label>Preferred usage</label>
+	    <meter min="50" max="250" low="100" high="200" value="120"></meter>
+	  </li>
+	  <li>
+	    <label>Too much traffic</label>
+	    <meter min="1024" max="10240" low="2048" high="8192" value="9216">
+	  </li>
+	  <li>
+	    <label>Optimum value</label>
+	    <meter value=".5" optimum=".8"></meter>
+	  </li>
+	</ul>
+	
+		<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script-->
+		<script src="../static/js/libs/jquery.min.js"></script>
+	
+	<script>
+		var attr = $('#meter').attr('value'),
+			prop = $('#meter').prop('value');
+		console.log('attr[value] = '+attr);
+		console.log('prop() '+prop);
+	</script>
+</body>
+</html>
