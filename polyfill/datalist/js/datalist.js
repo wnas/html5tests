@@ -43,7 +43,6 @@
 					list = document.createElement('ul'),
 					// get the options
 					options = datalist[i].getElementsByTagName('option');
-					console.log(item+i);
 				// create an id for the list of options
 				listId = item+'-'+i;
 				// and give it a classname so we can apply default styling to it.
@@ -57,7 +56,7 @@
 				// loop over the options
 				for(var j=0, len = options.length;j<len;j++){
 					// get the value and put it into the txt var.
-					var txt = document.createTextNode(options[j].value),
+					var txt = document.createTextNode(options[j].label),
 						// create a li element.
 						li = document.createElement('li');
 					// append the li to the list and set it's text
@@ -65,7 +64,6 @@
 					config.fakeListArray.push(txt);
 				}
 				// get the input element which talks to the datalist.
-				console.log(config.fakeListArray);
 				getRealDataList(item);
 			}
 		},
@@ -89,7 +87,8 @@
 					var len = config.fakeListArray.length;
 					for(var i=0; i<len; i++) {
 						var wrd = config.fakeListArray[i].textContent;
-						if(value.toLowerCase() == wrd.substr(0, value.lenght).toLowerCase()) {
+						var foo = wrd.substr(0, value.lenght).toLowerCase();
+						if(value.toLowerCase() == foo.substring(0,value.length)) {
 							list += '<li><a href="#">' + wrd + '</a></li>';
 						}
 					}
